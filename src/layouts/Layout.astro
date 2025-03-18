@@ -1,0 +1,52 @@
+---
+import Header from "../components/Header.astro"
+import Footer from "../components/sections/Footer.astro";
+import "boxicons/css/boxicons.min.css";
+import "../styles/global.css";
+
+
+interface Props {
+  title?: string
+}
+
+const { title = "Portafolio - Andres Benavides" } = Astro.props
+/* const preloadImg = "https://yourportfolio.com/images/hero.webp" */
+---
+
+<!doctype html>
+<html lang="es" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+   <!--  <link rel="preload" as="image" href={preloadImg} /> -->
+    <title>{title}</title>
+    
+    <meta name="description" content="Soy Andres Benavides, un desarrollador especializado en tecnologías web modernas. Explora mis proyectos, habilidades y contáctame para trabajar juntos." />
+    
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    
+    <!-- Open Graph Meta -->
+    <meta property="og:title" content="Portafolio - Andres Benavides" />
+    <meta property="og:description" content="Descubre mi trabajo como desarrollador web y mis proyectos destacados." />
+    <meta property="og:image" content="/images/portfolio-preview.webp" />
+    <meta property="og:url" content="https://yourportfolio.com" />
+    <meta property="og:type" content="website" />
+    
+    <!-- Twitter Meta -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Portafolio - Andres Benavides" />
+    <meta name="twitter:description" content="Soy un desarrollador web apasionado por la tecnología y el diseño de aplicaciones modernas." />
+    <meta name="twitter:image" content="/images/portfolio-preview.webp" />
+    <meta name="twitter:url" content="https://yourportfolio.com" />
+  </head>
+
+  <body class="bg-gray-200 text-gray-900 dark:bg-gray-900 dark:text-gray-100  w-screen overflow-x-hidden">
+    <Header />
+    <main class="container mx-auto px-6">
+      <slot />
+    </main>
+  </body>
+  <footer>
+    <Footer />
+  </footer>
+</html>

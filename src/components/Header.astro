@@ -1,0 +1,90 @@
+---
+import ThemeIcon from "./ui/ThemeIcon.astro";
+const menuItems = [
+  { name: "Inicio", id: "#", active: true },
+  { name: "Acerca de", id: "#about" },
+  { name: "Proyectos", id: "#projects" },
+  { name: "Contáctame", id: "#contact" },
+];
+---
+
+<header class="dark:bg-gray-800 bg-gray-200 py-4 fixed top-0 z-[1000] w-screen">
+  <nav class="container mx-auto flex items-center justify-between lg:justify-center px-4">
+    <!-- Botón de menú móvil a la izquierda -->
+    <div class="lg:hidden">
+      <button
+        type="button"
+        id="open-menu-button"
+        class="-m-2.5 inline-flex cursor-pointer items-center justify-center rounded-md p-2.5 text-black dark:text-white transition-all duration-300 hover:scale-150"
+      >
+        <span class="sr-only">Abrir Menú Principal</span>
+        <svg class="size-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"></path>
+        </svg>
+      </button>
+    </div>
+
+    <!-- Menú centrado en pantallas grandes -->
+    <div class="hidden lg:flex gap-6">
+      {menuItems.map((item) => (
+        <a
+          href={item.id}
+          class="relative px-4 py-2 text-black hover:text-gray-500 dark:text-gray-400 transition dark:hover:text-white text-sm/6 font-semibold after:absolute after:bottom-[-2px] after:left-0 after:h-0.5 after:w-0 after:bg-current after:transition-all after:duration-300 hover:after:w-full"
+        >
+          {item.name}
+        </a>
+      ))}
+    </div>
+
+    <!-- Botón de tema al final -->
+    <ThemeIcon />
+  </nav>
+
+  <!-- Menú móvil -->
+  <dialog
+    class="transition-(display) dark:bg-gray-800 bg-gray-200 z-50 size-full max-h-full max-w-full translate-x-0 transition-discrete duration-300 lg:hidden starting:-translate-x-full [&:not([open])]:-translate-x-full"
+    id="mobile-menu"
+    role="dialog"
+    aria-modal="true"
+  >
+    <div class="z-10 overflow-y-auto px-6 py-6">
+      <div class="flex items-center justify-between">
+        <button
+          type="button"
+          id="close-menu-button"
+          class="-m-2.5 cursor-pointer p-2.5 text-black dark:text-white transition-all duration-300 ease-in hover:scale-150"
+        >
+          <span class="sr-only">Cerrar Menú</span>
+          <svg class="size-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12"></path>
+          </svg>
+        </button>
+      </div>
+      <div class="mt-6 space-y-2">
+        {menuItems.map((item) => (
+          <a
+            href={item.id}
+            class="hover:text-gray-300 border-gray-500 -mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-black hover:bg-gray-400 dark:text-white dark:hover:bg-gray-700"
+          >
+            {item.name}
+          </a>
+        ))}
+      </div>
+    </div>
+  </dialog>
+</header>
+
+<script>
+  const mobileMenu = document.getElementById("mobile-menu") as HTMLDialogElement;
+  const openMenuButton = document.getElementById("open-menu-button");
+  const closeMenuButton = document.getElementById("close-menu-button");
+  const mobileItems = mobileMenu ? mobileMenu.querySelectorAll("a") : [];
+
+  const toggleMenu = () => {
+    mobileMenu.open ? mobileMenu.close() : mobileMenu.showModal();
+  };
+
+  openMenuButton?.addEventListener("click", toggleMenu);
+  closeMenuButton?.addEventListener("click", toggleMenu);
+  mobileItems?.forEach((item) => item.addEventListener("click", toggleMenu));
+</script>

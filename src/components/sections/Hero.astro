@@ -1,0 +1,67 @@
+<section
+  class="flex flex-col items-center justify-center min-h-screen text-center px-6 "
+>
+  <h1 class="text-4xl font-bold mt-6 animate-slide-in-left">
+    ¡Hola, soy <span class="dark:text-blue-400 text-blue-900  typing-effect">Andres Benavides!</span>
+  </h1>
+
+  <p class="text-lg text-gray-700 dark:text-gray-300 mt-4 animate-slide-in-right">
+    Desarrollador Web
+  </p>
+
+  <div
+    class="bg-gray-300 dark:bg-gray-800 w-72 shadow-lg rounded-lg p-6 mt-6 flex flex-col items-center space-y-4 animate-fade-in"
+  >
+    <a
+      href="https://github.com/andresbena04"
+      target="_blank"
+      class="flex items-center w-full px-4 py-3  text-white bg-gray-900 rounded-lg hover:bg-gray-800 transition duration-300"
+    >
+      <i class="bx bxl-github text-2xl mr-3"></i>
+      GitHub
+    </a>
+
+    <a
+      href="https://linkedin.com/in/andresb04"
+      target="_blank"
+      class="flex items-center w-full px-4 py-3 text-white bg-blue-600 rounded-lg hover:bg-blue-500 transition duration-300"
+    >
+      <i class="bx bxl-linkedin text-2xl mr-3"></i>
+      LinkedIn
+    </a>
+
+    <a
+      href="mailto:andresbena3515@gmail.com"
+      class="flex items-center w-full px-4 py-3 text-white bg-red-600 rounded-lg hover:bg-red-500 transition duration-300"
+    >
+      <i class="bx bx-envelope text-2xl mr-3"></i>
+      Email
+    </a>
+  </div>
+</section>
+<style>
+  @keyframes typing {
+    from {
+      width: 0;
+    }
+    to {
+      width: 15.5ch;
+    }
+  }
+
+  @keyframes blink {
+    50% {
+      border-color: transparent;
+    }
+  }
+
+  .typing-effect {
+    display: inline-flex;
+    overflow: hidden;
+    white-space: nowrap;
+    border-right: 3px solid #38bdf8;
+    animation:
+      typing 3s steps(14, end) forwards,
+      blink 0.8s infinite;
+  }
+</style>

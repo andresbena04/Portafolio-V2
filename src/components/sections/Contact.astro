@@ -1,0 +1,87 @@
+<section id="contact" class="py-16 dark:bg-gray-900 bg-gray-200">
+  <div class="container mx-auto px-6 text-center">
+    <div
+      class="dark:border-white border-black border-2 flex-grow border-t mb-8"
+    >
+    </div>
+    <h2 class="text-3xl md:text-4xl font-bold mb-8 animate-fade-in">
+      Contáctame
+    </h2>
+
+    <p class="dark:text-gray-400 max-w-lg mx-auto mb-6">
+      Si tienes alguna pregunta, proyecto o simplemente quieres saludar, ¡no
+      dudes en escribirme!
+    </p>
+
+    <!-- Formulario de contacto -->
+    <form
+      class="max-w-lg mx-auto bg-gray-300 dark:bg-gray-800 p-6 rounded-lg shadow-lg animate-fade-up"
+    >
+      <div class="mb-4 text-left">
+        <label for="name" class="block text-sm font-medium dark:text-gray-300"
+          >Nombre</label
+        >
+        <input
+          type="text"
+          id="name"
+          required
+          class="w-full mt-1 p-3 dark:bg-gray-700 border dark:border-gray-600 rounded-md text-white focus:ring-2 focus:ring-blue-400 focus:outline-none"
+          placeholder="Tu nombre"
+        />
+      </div>
+
+      <div class="mb-4 text-left">
+        <label for="email" class="block text-sm font-medium dark:text-gray-300"
+          >Correo Electrónico</label
+        >
+        <input
+          type="email"
+          id="email"
+          required
+          class="w-full mt-1 p-3 dark:bg-gray-700 border dark:border-gray-600 rounded-md text-white focus:ring-2 focus:ring-blue-400 focus:outline-none"
+          placeholder="tu@email.com"
+        />
+      </div>
+
+      <div class="mb-4 text-left">
+        <label
+          for="message"
+          class="block text-sm font-medium dark:text-gray-300">Mensaje</label
+        >
+        <textarea
+          id="message"
+          rows="4"
+          required
+          class="w-full mt-1 p-3 dark:bg-gray-700 border dark:border-gray-600 rounded-md text-white focus:ring-2 focus:ring-blue-400 focus:outline-none"
+          placeholder="Escribe tu mensaje..."></textarea>
+      </div>
+
+      <button
+        type="submit"
+        class="relative group w-full mt-4 p-3 bg-blue-500 hover:bg-blue-600 transition rounded-md font-semibold text-white cursor-not-allowed"
+        disabled
+      >
+        Enviar Mensaje
+        <!-- Tooltip -->
+        <span
+          class="absolute -bottom-8 left-1/2 -translate-x-1/2 bg-black text-white text-xs px-3 py-1 rounded-md opacity-0 group-hover:opacity-100 transition"
+        >
+          Próximamente
+        </span>
+      </button>
+    </form>
+
+    <!-- Redes Sociales -->
+    <!--  <div class="mt-8 flex justify-center gap-6 animate-fade-up">
+        <a href="https://github.com/" target="_blank" class="text-gray-400 hover:text-white transition text-2xl">
+          <i class='bx bxl-github'></i>
+        </a>
+        <a href="https://linkedin.com/" target="_blank" class="text-gray-400 hover:text-white transition text-2xl">
+          <i class="fab fa-linkedin"></i>
+        </a>
+        <a href="mailto:tucorreo@email.com" class="text-gray-400 hover:text-white transition text-2xl">
+          <i class="fas fa-envelope"></i>
+        </a>
+      </div> -->
+  </div>
+</section>
