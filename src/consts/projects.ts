@@ -38,5 +38,11 @@ export const projects = [
       image: "https://lone.design/wp-content/uploads/2022/06/TicketSupportSystem.png",
       link: "https://github.com/andresbena04/support-ticket-system"
     },
+    {
+      title: "CineApp",
+      description: "Aplicación en Angular para visualizar la información de las películas en cartelera y los próximos estrenos.",
+      image: "https://github.com/andresbena04/cine-angular/raw/main/src/assets/cineapp-preview.png",
+      link: "https://github.com/andresbena04/cine-angular"
+    }
   ]
   
