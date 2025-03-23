@@ -43,6 +43,13 @@ export const projects = [
       description: "Aplicación en Angular para visualizar la información de las películas en cartelera y los próximos estrenos.",
       image: "https://github.com/andresbena04/cine-angular/raw/main/src/assets/cineapp-preview.png",
       link: "https://github.com/andresbena04/cine-angular"
+    },
+    {
+      title: "Cabaña Ladera Verde",
+      description: "Landing page para la promoción de la cabaña Ladera Verde, destacando sus servicios, galería e información de contacto.",
+      image: "https://github.com/tu-usuario/landing-cabana/raw/main/assets/preview.png",
+      link: "https://github.com/andresbena04/ladera-verde-landing.git"
     }
+    
   ]
   
