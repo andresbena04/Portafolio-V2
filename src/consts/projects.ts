@@ -25,7 +25,11 @@ export const projects = [
       description: "Landing page para la promoción de la cabaña Ladera Verde, destacando sus servicios, galería e información de contacto.",
       link: "https://github.com/andresbena04/ladera-verde-landing.git",
       demo: "https://ladera-verde-landing.vercel.app"
+    },
+    {
+      title: "Contribuciones a Lolalolitaland",
+      description: "He realizado varias contribuciones al proyecto de Lolalolitaland, incluyendo mejoras de funcionalidades y correcciones de errores.",
+      link: "https://github.com/midudev/lolalolitaland.com/pulls?q=is%3Apr+author%3Aandresbena04"
     }
-    
   ]
   
