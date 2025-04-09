@@ -1,0 +1,90 @@
+---
+import Layout from "../../layouts/Layout.astro";
+const { slug } = Astro.params;
+import { projects } from "../../consts/projects";
+
+const project = projects.find((project) => project.slug === slug);
+if (!project) {
+  throw new Error(`Project with slug "${slug}" not found`);
+}
+---
+
+<Layout title={`${project.title} - Andres Benavides`}>
+  <section class="py-16 mt-16 max-w-6xl mx-auto px-4">
+    <div class="grid gap-6 md:grid-cols-6 auto-rows-[minmax(150px,_auto)]">
+      <!-- Imagen destacada: grande -->
+      <div
+        class="md:col-span-4 md:row-span-2 rounded-2xl overflow-hidden shadow-lg"
+      >
+        <img
+          src={project.image?.src}
+          alt={`Imagen del proyecto ${project.title}`}
+          class="w-full h-full object-cover"
+          loading="lazy"
+        />
+      </div>
+
+      <!-- Título y descripción -->
+      <div
+        class="md:col-span-2 bg-white dark:bg-gray-800 p-6 rounded-2xl shadow-lg flex flex-col justify-between"
+      >
+        <div>
+          <h1 class="text-3xl font-bold text-zinc-900 dark:text-white mb-2">
+            {project.title}
+          </h1>
+          <p class="text-zinc-700 dark:text-zinc-300">{project.description}</p>
+        </div>
+      </div>
+
+      <!-- Tecnologías -->
+      <div
+        class="md:col-span-2 bg-white dark:bg-gray-800 p-6 rounded-2xl shadow-lg"
+      >
+        <h2 class="text-xl font-semibold text-zinc-800 dark:text-zinc-200 mb-4">
+          Tecnologías utilizadas:
+        </h2>
+        <ul class="flex flex-wrap gap-2">
+          {
+            (project.technologies ?? []).map((tech) => (
+              <li class="bg-zinc-200 dark:bg-zinc-700 text-sm px-3 py-1 rounded-full text-zinc-900 dark:text-white">
+                {tech}
+              </li>
+            ))
+          }
+        </ul>
+      </div>
+
+      <!-- Enlaces -->
+      <div
+        class="md:col-span-6 h-24 bg-white dark:bg-gray-800 p-6 rounded-2xl shadow-lg flex flex-col gap-2"
+      >
+        <div class="flex gap-4">
+          <a
+            href={project.link}
+            target="_blank"
+            class={`flex items-center justify-center px-3 py-1 rounded-lg bg-blue-500 dark:bg-blue-600 text-white font-medium transition-all duration-300 hover:bg-blue-600 dark:hover:bg-blue-500 hover:shadow-lg ${
+               project.demo ? "w-1/2" : "w-full"
+            }`}
+          >
+            <i
+              class="bx bxl-github text-2xl mr-2 transition-transform duration-300"
+            ></i>
+            Repositorio
+          </a>
+          {
+            project.demo && (
+              <a
+                href={project.demo}
+                target="_blank"
+                class="flex items-center justify-center w-1/2 px-3 py-1 rounded-lg bg-green-500 dark:bg-green-600 text-white font-medium transition-all duration-300 hover:bg-green-600 dark:hover:bg-green-500 hover:shadow-lg"
+              >
+                <i class="bx bxs-show text-2xl mr-2 transition-transform duration-300" />
+                Preview
+              </a>
+            )
+          }
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>
