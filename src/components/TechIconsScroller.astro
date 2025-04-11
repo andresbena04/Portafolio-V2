@@ -1,0 +1,42 @@
+---
+import { techIcons } from "../consts/techIcons";
+---
+
+<section>
+  <div class="w-full inline-flex flex-nowrap overflow-hidden">
+    <ul
+      class="flex items-center justify-center md:justify-start [&_li]:mx-8 animate-infinite-scroll"
+    >
+      {
+        techIcons.map((tech) => (
+          <li class="flex flex-col items-center text-center">
+            <img
+              src={tech.icon.src}
+              alt={tech.alt}
+              class="h-12 w-auto mb-2 dark:invert hover:scale-110 transition-all"
+            />
+            <span class="text-sm text-gray-700 dark:text-gray-300">{tech.name}</span>
+          </li>
+        ))
+      }
+    </ul>
+    <!-- Segunda lista para el loop infinito -->
+    <ul
+      class="flex items-center justify-center md:justify-start [&_li]:mx-8 animate-infinite-scroll"
+      aria-hidden="true"
+    >
+      {
+        techIcons.map((tech) => (
+          <li class="flex flex-col items-center text-center">
+            <img
+              src={tech.icon.src}
+              alt={tech.alt}
+             class="h-12 w-auto mb-2 dark:invert hover:scale-110 transition-all"
+            />
+            <span class="text-sm text-gray-700 dark:text-gray-300">{tech.name}</span>
+          </li>
+        ))
+      }
+    </ul>
+  </div>
+</section>
