@@ -1,12 +1,12 @@
-import typeScriptIcon from '../assets/tech/typescript.svg';
-import javaScriptIcon from '../assets/tech/javascript.svg';
-import angular from '../assets/tech/angular.svg';
-import nestjs from '../assets/tech/nestjs.svg';
-import nodejs from '../assets/tech/nodedotjs.svg';
-import express from '../assets/tech/express.svg';
-import mysql from '../assets/tech/mysql.svg';
-import postgresql from '../assets/tech/postgresql.svg';
-import astro from '../assets/tech/astro.svg';
+import typeScriptIcon from '../../public/assets/svg/typescript.svg';
+import javaScriptIcon from '../../public/assets/svg/javascript.svg';
+import angular from '../../public/assets/svg/angular.svg';
+import nestjs from '../../public/assets/svg/nestjs.svg';
+import nodejs from '../../public/assets/svg/nodedotjs.svg';
+import express from '../../public/assets/svg/express.svg';
+import mysql from '../../public/assets/svg/mysql.svg';
+import postgresql from '../../public/assets/svg/postgresql.svg';
+import astro from '../../public/assets/svg/astro.svg';
 
 export const techIcons =  [
     { name: 'Angular', icon: angular, alt: 'Angular' },
