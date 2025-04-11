@@ -2,11 +2,16 @@
 import Layout from "../../layouts/Layout.astro";
 const { slug } = Astro.params;
 import { projects } from "../../consts/projects";
+import { techIcons } from "../../consts/techIcons";
+
 
 const project = projects.find((project) => project.slug === slug);
 if (!project) {
   throw new Error(`Project with slug "${slug}" not found`);
 }
+const techIconsUsed = techIcons.filter((icon) =>
+  project.technologies?.includes(icon.name)
+);
 ---
 
 <Layout title={`${project.title} - Andres Benavides`}>
@@ -45,9 +50,14 @@ if (!project) {
         </h2>
         <ul class="flex flex-wrap gap-2">
           {
-            (project.technologies ?? []).map((tech) => (
-              <li class="bg-zinc-200 dark:bg-zinc-700 text-sm px-3 py-1 rounded-full text-zinc-900 dark:text-white">
-                {tech}
+            techIconsUsed.map((icon) => (
+              <li class="bg-zinc-200 dark:bg-zinc-700 text-sm px-3 py-1 rounded-full text-zinc-900 dark:text-white flex items-center gap-2">
+                <img
+                  src={icon.icon.src}
+                  alt={icon.alt}
+                  class="h-4 w-auto dark:invert"
+                />
+                {icon.name}
               </li>
             ))
           }
