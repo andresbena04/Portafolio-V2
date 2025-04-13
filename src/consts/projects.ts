@@ -4,6 +4,7 @@ import lolaloitaland from "../../public/assets/images/ImgProjects/lolalolitaland
 import SystemTicket from "../../public/assets/images/ImgProjects/ticketing-system.avif"
 import SystemPos from "../../public/assets/images/ImgProjects/systemPos.avif"
 import FactusApi from "../../public/assets/images/ImgProjects/factusApi.avif"
+import TournamentX from "../../public/assets/images/ImgProjects/tournamentx.avif"
 
 export const projects = [
   {
@@ -47,6 +48,15 @@ export const projects = [
     image: LaderaVerde,
     link: "https://github.com/andresbena04/ladera-verde-landing.git",
     demo: "https://ladera-verde-landing.vercel.app"
+  },
+  {
+    title: "TournamentX",
+    slug: "tournamentxapp",
+    description: "Generador de fixtures para competiciones deportivas o de cualquier índole. Configura equipos, personaliza nombres y genera calendarios exportables en PDF.",
+    technologies: ["Angular"],
+    image: TournamentX,
+    link: "https://github.com/andresbena04/tournament-fixture-builder.git",
+    demo: "https://tournamentxapp.vercel.app/"
   },
   {
     title: "Contribuciones a Lolalolitaland",
